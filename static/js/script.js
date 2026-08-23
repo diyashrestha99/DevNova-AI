@@ -318,3 +318,90 @@ async function searchGitHub() {
 
     }
 }
+async function loadVCSData() {
+
+    const branch =
+        document.getElementById("vcsBranch");
+
+    const commits =
+        document.getElementById("vcsCommits");
+
+    const files =
+        document.getElementById("vcsFiles");
+
+    const status =
+        document.getElementById("vcsStatus");
+
+    const commitList =
+        document.getElementById("commitList");
+
+
+    try {
+
+        const response =
+            await fetch("/vcs");
+
+
+        const data =
+            await response.json();
+
+
+        branch.textContent =
+            data.branch || "Unknown";
+
+        commits.textContent =
+            data.commits;
+
+        files.textContent =
+            data.files;
+
+        status.textContent =
+            data.status;
+
+
+        if (data.recent_commits.length === 0) {
+
+            commitList.innerHTML =
+                "<p>No commits found.</p>";
+
+            return;
+        }
+
+
+        commitList.innerHTML =
+            data.recent_commits.map(commit => `
+
+                <div class="commit-item">
+
+                    <span class="commit-hash">
+                        ${commit.hash}
+                    </span>
+
+                    <span class="commit-message">
+                        ${commit.message}
+                    </span>
+
+                    <span class="commit-author">
+                        ${commit.author}
+                    </span>
+
+                </div>
+
+            `).join("");
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        commitList.innerHTML =
+            "<p>❌ Unable to load Git information.</p>";
+
+    }
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadVCSData
+);

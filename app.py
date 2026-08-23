@@ -3,7 +3,7 @@ import ast
 import requests
 
 from ml.model import predict_error
-
+from vcs import get_vcs_data
 
 app = Flask(__name__)
 
@@ -179,7 +179,12 @@ def github_profile(username):
             repositories
 
     })
+@app.route("/vcs")
+def vcs_dashboard():
 
+    data = get_vcs_data()
+
+    return jsonify(data)
 if __name__ == "__main__":
 
     app.run(debug=True)
