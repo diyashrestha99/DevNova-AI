@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dev Nova AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">✦ Dev Nova AI</div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#analyzer">Code Analyzer</a>
+            <a href="#github">GitHub</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="badge">
+            ✨ AI-Powered Developer Assistant
+        </div>
+
+        <h1>
+            Code Smarter.<br>
+            <span>Learn Faster.</span>
+        </h1>
+
+        <p>
+            Analyze your code, understand errors,
+            and improve your programming skills with Dev Nova AI.
+        </p>
+
+        <a href="#analyzer" class="primary-btn">
+            Analyze My Code →
+        </a>
+
+    </section>
+
+
+    <section class="analyzer-section" id="analyzer">
+
+        <h2>Code Analyzer</h2>
+
+        <p>
+            Paste your Python code below.
+        </p>
+
+        <div class="analyzer-box">
+
+            <textarea id="codeInput"
+                placeholder="Paste your Python code here..."></textarea>
+
+            <button onclick="analyzeCode()">
+                🔍 Analyze Code
+            </button>
+
+        </div>
+
+        <div class="result-box">
+
+            <h3>🤖 AI Analysis</h3>
+
+            <p id="result">
+                Waiting for your code...
+            </p>
+
+        </div>
+
+    </section>
+
+<section class="github-section" id="github">
+
+    <div class="github-heading">
+
+        <div class="badge">
+            🐙 GitHub Intelligence
+        </div>
+
+        <h2>
+            Explore a Developer
+        </h2>
+
+        <p>
+            Enter a GitHub username to retrieve
+            public developer information.
+        </p>
+
+    </div>
+
+
+    <div class="github-search">
+
+        <input
+            type="text"
+            id="githubUsername"
+            placeholder="Enter GitHub username..."
+        >
+
+        <button onclick="searchGitHub()">
+            🔍 Explore
+        </button>
+
+    </div>
+
+
+    <div id="githubResult" class="github-result">
+
+        <p>
+            Enter a GitHub username to get started.
+        </p>
+
+    </div>
+
+</section>
+
+    <footer>
+        <p>✦ Dev Nova AI</p>
+        <small>Python • APIs • Machine Learning</small>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

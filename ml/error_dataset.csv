@@ -1,0 +1,39 @@
+code,error_type
+"print(username)",NameError
+"print(age)",NameError
+"total = price + taxx",NameError
+"print(user_name)",NameError
+"print(student_name)",NameError
+"print(scoree)",NameError
+"print(undefined_variable)",NameError
+"print(customer_name)",NameError
+"result = ""Age: "" + 20",TypeError
+"total = 10 + ""5""",TypeError
+"name = ""John"" + 25",TypeError
+"numbers = [1] + 5",TypeError
+"text = ""hello"" - ""h""",TypeError
+"value = len(10)",TypeError
+"result = 5 + None",TypeError
+"number = ""10"" * ""2""",TypeError
+"numbers = [1, 2, 3]; print(numbers[5])",IndexError
+"items = [""a"", ""b""]; print(items[10])",IndexError
+"values = [10, 20]; print(values[3])",IndexError
+"names = [""John"", ""Jane""]; print(names[-5])",IndexError
+"data = [1, 2, 3]; print(data[8])",IndexError
+"numbers = [4, 5]; print(numbers[9])",IndexError
+"student = {""name"": ""John""}; print(student[""age""])",KeyError
+"person = {""name"": ""Alex""}; print(person[""email""])",KeyError
+"data = {""id"": 10}; print(data[""username""])",KeyError
+"user = {""age"": 20}; print(user[""name""])",KeyError
+"book = {""title"": ""Python""}; print(book[""author""])",KeyError
+"age = int(""hello"")",ValueError
+"number = float(""abc"")",ValueError
+"value = int(""ten"")",ValueError
+"result = int(""3.5"")",ValueError
+"number = float(""hello"")",ValueError
+"age = int(""twenty"")",ValueError
+"result = 10 / 0",ZeroDivisionError
+"value = 25 // 0",ZeroDivisionError
+"number = 100 / 0",ZeroDivisionError
+"result = 5 % 0",ZeroDivisionError
+"answer = 20 // 0",ZeroDivisionError
