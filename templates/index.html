@@ -7,22 +7,32 @@
 
     <title>Dev Nova AI</title>
 
+    <!-- Main CSS -->
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
+    <!-- ==================== NAVBAR ==================== -->
+
     <nav class="navbar">
-        <div class="logo">✦ Dev Nova AI</div>
+
+        <div class="logo">
+            ✦ Dev Nova AI
+        </div>
 
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#analyzer">Code Analyzer</a>
             <a href="#github">GitHub</a>
+            <a href="#vcs">VCS</a>
         </div>
+
     </nav>
 
+
+    <!-- ==================== HERO ==================== -->
 
     <section class="hero">
 
@@ -47,6 +57,8 @@
     </section>
 
 
+    <!-- ==================== CODE ANALYZER ==================== -->
+
     <section class="analyzer-section" id="analyzer">
 
         <h2>Code Analyzer</h2>
@@ -57,14 +69,17 @@
 
         <div class="analyzer-box">
 
-            <textarea id="codeInput"
-                placeholder="Paste your Python code here..."></textarea>
+            <textarea
+                id="codeInput"
+                placeholder="Paste your Python code here..."
+            ></textarea>
 
             <button onclick="analyzeCode()">
                 🔍 Analyze Code
             </button>
 
         </div>
+
 
         <div class="result-box">
 
@@ -78,154 +93,184 @@
 
     </section>
 
-<section class="github-section" id="github">
 
-    <div class="github-heading">
+    <!-- ==================== GITHUB INTELLIGENCE ==================== -->
 
-        <div class="badge">
-            🐙 GitHub Intelligence
-        </div>
+    <section class="github-section" id="github">
 
-        <h2>
-            Explore a Developer
-        </h2>
+        <div class="github-heading">
 
-        <p>
-            Enter a GitHub username to retrieve
-            public developer information.
-        </p>
+            <div class="badge">
+                🐙 GitHub Intelligence
+            </div>
 
-    </div>
+            <h2>
+                Explore a Developer
+            </h2>
 
-
-    <div class="github-search">
-
-        <input
-            type="text"
-            id="githubUsername"
-            placeholder="Enter GitHub username..."
-        >
-
-        <button onclick="searchGitHub()">
-            🔍 Explore
-        </button>
-
-    </div>
-
-
-    <div id="githubResult" class="github-result">
-
-        <p>
-            Enter a GitHub username to get started.
-        </p>
-
-    </div>
-
-</section>
-<section class="vcs-section" id="vcs">
-
-    <div class="github-heading">
-
-        <div class="badge">
-            🌿 Version Control Intelligence
-        </div>
-
-        <h2>
-            Project VCS Dashboard
-        </h2>
-
-        <p>
-            Real-time Git information from the Dev Nova AI repository.
-        </p>
-
-    </div>
-
-
-    <div class="vcs-stats">
-
-        <div class="vcs-card">
-
-            <span>🌿</span>
-
-            <strong id="vcsBranch">
-                Loading...
-            </strong>
-
-            <small>
-                Current Branch
-            </small>
+            <p>
+                Enter a GitHub username to retrieve
+                public developer information.
+            </p>
 
         </div>
 
 
-        <div class="vcs-card">
+        <div class="github-search">
 
-            <span>📝</span>
+            <input
+                type="text"
+                id="githubUsername"
+                placeholder="Enter GitHub username..."
+            >
 
-            <strong id="vcsCommits">
-                Loading...
-            </strong>
-
-            <small>
-                Commits
-            </small>
-
-        </div>
-
-
-        <div class="vcs-card">
-
-            <span>📁</span>
-
-            <strong id="vcsFiles">
-                Loading...
-            </strong>
-
-            <small>
-                Tracked Files
-            </small>
+            <button onclick="searchGitHub()">
+                🔍 Explore
+            </button>
 
         </div>
 
 
-        <div class="vcs-card">
+        <div id="githubResult" class="github-result">
 
-            <span>🔄</span>
-
-            <strong id="vcsStatus">
-                Loading...
-            </strong>
-
-            <small>
-                Repository Status
-            </small>
+            <p>
+                Enter a GitHub username to get started.
+            </p>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="commit-panel">
+    <!-- ==================== VERSION CONTROL INTELLIGENCE ==================== -->
 
-        <h3>
-            🕐 Recent Commits
-        </h3>
+    <section class="vcs-section" id="vcs">
 
-        <div id="commitList">
+        <div class="github-heading">
 
-            Loading commits...
+            <div class="badge">
+                🌿 Version Control Intelligence
+            </div>
+
+            <h2>
+                Project VCS Dashboard
+            </h2>
+
+            <p>
+                Real-time Git information from the Dev Nova AI repository.
+            </p>
 
         </div>
 
-    </div>
 
-</section>
+        <!-- VCS STAT CARDS -->
+
+        <div class="vcs-stats">
+
+
+            <!-- Current Branch -->
+
+            <div class="vcs-card">
+
+                <span>🌿</span>
+
+                <strong id="vcsBranch">
+                    Loading...
+                </strong>
+
+                <small>
+                    Current Branch
+                </small>
+
+            </div>
+
+
+            <!-- Commits -->
+
+            <div class="vcs-card">
+
+                <span>📝</span>
+
+                <strong id="vcsCommits">
+                    Loading...
+                </strong>
+
+                <small>
+                    Commits
+                </small>
+
+            </div>
+
+
+            <!-- Tracked Files -->
+
+            <div class="vcs-card">
+
+                <span>📁</span>
+
+                <strong id="vcsFiles">
+                    Loading...
+                </strong>
+
+                <small>
+                    Tracked Files
+                </small>
+
+            </div>
+
+
+            <!-- Repository Status -->
+
+            <div class="vcs-card">
+
+                <span>🔄</span>
+
+                <strong id="vcsStatus">
+                    Loading...
+                </strong>
+
+                <small>
+                    Repository Status
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT COMMITS -->
+
+        <div class="commit-panel">
+
+            <h3>
+                🕐 Recent Commits
+            </h3>
+
+            <div id="commitList">
+                Loading commits...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
 
     <footer>
-        <p>✦ Dev Nova AI</p>
-        <small>Python • APIs • Machine Learning</small>
+
+        <p>
+            ✦ Dev Nova AI
+        </p>
+
+        <small>
+            Python • APIs • Machine Learning
+        </small>
+
     </footer>
 
+
+    <!-- ==================== MAIN JAVASCRIPT ==================== -->
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
